@@ -2,7 +2,6 @@ function [ strout ] = get_note_pitch( locs_eighth_note, locs_fourth_note, locs_y
 % GET NOTE PITCH 
 %   Inputs, notes types, y locations and subimages
 %   Outputs, a string with all classified notes
-
     strout = '';
     pitches = {'E4','D4','C4','B3','A3','G3','F3','E3','D3','C3','B2','A2','G2','F2','E2','D2','C2','B1','A1','G1'};
     diffrence = mean(diff(subimg_staff_lines{1}))/2;

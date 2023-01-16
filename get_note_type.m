@@ -2,7 +2,6 @@ function [ locs_fourth_note, locs_eighth_note ] = get_note_type( locs_x, locs_y,
 % GET NOTE TYPE 
 %   Inputs, locations of notes and their boundingboxes and clean subimages
 %   Outputs, the type of the notes
-
     locs_eighth_note = [];
     locs_fourth_note = [];
     pks_temp = [];

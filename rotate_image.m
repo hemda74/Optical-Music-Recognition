@@ -3,7 +3,6 @@ function [ rotated_image ] = rotate_image( image )
 %   Inputs, binary image
 %   Outputs, binary image that is rotatated with an angle based on Hough
 %   transform
-
     [H, theta, rho] = hough(image, 'theta', -89.9:0.1:89.9);
     peak = houghpeaks(H);
     lineAngle = theta(peak(2));

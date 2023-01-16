@@ -1,8 +1,7 @@
 function [ height_start, height_end, width_start, width_end ] = naive_crop( image )
 % NAIVE CROP 
 %   Inputs, image
-%   Outputs, positions where to crop
-    
+%   Outputs, positions where to crop  
     % Theshold the image so that the background is white and the sheet 
     % is black 
     bw = 1-imbinarize(image(:,:,3),'global');

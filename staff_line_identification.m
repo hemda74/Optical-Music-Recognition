@@ -2,7 +2,6 @@ function [ staff_lines ] = staff_line_identification( bw_image )
 % STAFF LINE IDENTIFICATION 
 %   Inputs, binary image
 %   Outputs, positions and cluster of the staff lines
-    
     % Erosion of horizontal lines 
     se_line = strel('line', length(bw_image)*0.005, 0);
     bw_image = imerode(bw_image, se_line);
