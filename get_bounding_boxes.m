@@ -2,7 +2,6 @@ function [ locs_bb, out_subimg_clean ] = get_bounding_boxes( locs_x, locs_y, sub
 % GET BOUNDING BOXES
 %   Inputs, locations of notes and clean subimages
 %   Outputs, locations of each bounding box and a cleaner set of subimages
-
     for i_img=1:n
         % Get all coherent regions
         L = bwlabel(subimg_clean{i_img});
