@@ -2,7 +2,6 @@ function [ locs_x, locs_y ] = find_note_locations( subimg, n )
 % FIND NOTE LOCATIONS 
 %   Inputs, binary images and number of subimages
 %   Outputs, subimages stored in cells
-
     % Structuring elements that looks like note heads
     se_disk_small = strel('disk', 1);
 
@@ -22,21 +21,16 @@ function [ locs_x, locs_y ] = find_note_locations( subimg, n )
         m_area = median([note_heads.Area]);
         
         subimg_temp{i_img} = imerode(subimg_temp{i_img},se_disk_small);
-
-        
         % Remove noise smaller than 40% of the maximal object
         %subimg_temp{i_img} = xor(bwareaopen(subimg_temp{i_img}, round(m_area*0.8)),...
          %   bwareaopen(subimg_temp{i_img}, round(m_area*1.2)));
-
         % Merge close objects
         subimg_temp{i_img} = imdilate(subimg_temp{i_img},se_disk_large);
-        subimg_temp{i_img} = subimg_temp{i_img} > 0.01;
-        
+        subimg_temp{i_img} = subimg_temp{i_img} > 0.01; 
         % Print detected notes as an overlay on the image
         %overlay = imoverlay(subimg{i_img}, subimg_temp{i_img}, [.3 1 .3]);
         %figure;
-        %imshow(overlay);
-        
+        %imshow(overlay); 
         % Find locations of the note head based on their centroids
         note_heads = regionprops(subimg_temp{i_img}, 'Centroid');
         centroids = cat(1, note_heads.Centroid);
