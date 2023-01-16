@@ -9,6 +9,5 @@ function [ locs_group_size ] = get_note_group( locs_bb, n )
             locs_group_size{i_img}(i) = length(find(bb_mat(1:4:end) == locs_bb{i_img}{i}(1)));
         end
     end
-
 end
 
